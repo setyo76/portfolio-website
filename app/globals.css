@@ -1,26 +1,60 @@
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-[#0a192f] text-[#ccd6f6] antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-[#e6f1ff] font-bold;
+  }
+  
+  p {
+    @apply text-[#8892b0];
+  }
+  
+  a {
+    @apply text-[#64ffda] transition-colors;
+  }
+  
+  a:hover {
+    @apply text-[#8cffe0];
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a192f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1d2d50;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #233554;
+}
+
+/* app/globals.css */
+@layer utilities {
+  .stroke-text {
+    /* Stroke transparan agar tidak terlalu mencolok seperti di desain */
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+    font-family: var(--font-inter), sans-serif; /* Pastikan font sesuai */
+  }
+
+  @media (min-width: 768px) {
+    .stroke-text {
+      -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.3);
+    }
+  }
 }
