@@ -75,11 +75,12 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className='w-full bg-black py-16 md:py-24 lg:py-32'>
-      <div className='container mx-auto px-6 md:px-[140px]'>
-        <div className='grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12'>
-          {/* Left Section - Text Content (5 columns) */}
-          <div className='lg:col-span-5 flex flex-col justify-between'>
+    <section className='w-full bg-black py-16 md:py-24 lg:py-32'>
+      <div id="skills" className='container mx-auto px-6 md:px-[140px]'>
+        <div className='flex flex-col lg:flex-row gap-8 lg:gap-12'>
+          
+          {/* Left Section - Text Content */}
+          <div className='w-full lg:w-[367px] flex flex-col justify-between'>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -96,40 +97,38 @@ export default function Skills() {
               </p>
             </motion.div>
 
-            {/* Button aligned with Mongo DB */}
+            {/* Button Full Width */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className='pt-8 lg:pt-0'
+              className='pt-8 lg:pt-0 w-full'
             >
-              <Button icon variant='primary'>
+              <Button icon variant='primary' className='w-full'>
                 Send Message
               </Button>
             </motion.div>
           </div>
 
-          {/* Right Section - Skills List (7 columns) */}
+          {/* Right Section - Skills List */}
           <motion.div
             variants={containerVariants}
             initial='hidden'
             whileInView='visible'
             viewport={{ once: true }}
-            className='lg:col-span-7 space-y-1'
+            className='flex-1 lg:w-[642px] space-y-0 relative'
           >
+            {/* Vertical White Border for first 3 items */}
+            <div className='absolute left-0 top-0 bottom-[calc(60%+1px)] w-[2px] bg-white' />
+
             {skills.map((skill, index) => (
               <motion.div
                 key={skill.name}
                 variants={itemVariants}
                 className='group relative'
               >
-                {/* Vertical Border Line for first 3 items (HTML, CSS, Javascript) */}
-                {index < 3 && (
-                  <div className='absolute left-[-18px] top-0 bottom-0 w-[4px] bg-gradient-to-b from-transparent via-white/20 to-transparent' />
-                )}
-
-                <div className='flex items-center justify-between py-5 border-b border-[#1d2d50] hover:border-[#64ffda] transition-colors duration-300'>
+                <div className='flex items-center justify-between py-5 border-b border-[#1d2d50] hover:border-[#64ffda] transition-colors duration-300 pl-6'>
                   <div className='flex items-center gap-4'>
                     <div className='relative w-9 h-9 flex items-center justify-center'>
                       <Image
@@ -150,7 +149,7 @@ export default function Skills() {
                 </div>
 
                 {/* Progress Bar */}
-                <div className='relative h-[1px] bg-[#1d2d50]/30 -mt-[1px]'>
+                <div className='relative h-[1px] bg-[#1d2d50]/30 -mt-[1px] ml-6'>
                   <motion.div
                     custom={skill.percentage}
                     variants={barVariants}

@@ -128,8 +128,8 @@ export default function Experience() {
                 {/* Card */}
                 <div className="relative h-[336px] md:h-[480px] border border-white/10 rounded-lg p-5 md:p-8 flex flex-col justify-between hover:border-white/20 transition-colors duration-300 group">
                   
-                  {/* Teal Border Left */}
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#14b8a6] rounded-l-lg" />
+                  {/* Teal Border Left - HANYA DARI HEADING SAMPAI TAHUN */}
+                  <div className="absolute left-0 top-5 md:top-8 w-1 bg-[#14b8a6] rounded-l-lg h-[72px]" />
                   
                   {/* Header with Icon */}
                   <div className="flex items-start justify-between">
@@ -171,17 +171,26 @@ export default function Experience() {
           </motion.div>
 
           {/* Progress Bar & Navigation */}
-          <div className="mt-8 flex items-center gap-6">
+          <div className="mt-8 flex flex-col gap-6">
             
+            {/* Progress Bar - SEBATAS LEBAR CARD DAN WARNA PUTIH */}
+            <div className="w-full md:w-[564px] h-1 bg-white/10 rounded-full overflow-hidden">
+              <motion.div
+                className="h-full bg-white rounded-full"
+                style={{ width: `${scrollProgress}%` }}
+                transition={{ duration: 0.1 }}
+              />
+            </div>
+
             {/* Navigation Buttons */}
             <div className="flex items-center gap-4">
               <button
                 onClick={() => scroll('left')}
                 disabled={!canScrollLeft}
-                className={`w-[106px] h-[48px] md:w-[120px] md:h-[56px] rounded-lg border border-white/20 flex items-center justify-center transition-all ${
+                className={`w-[106px] h-[48px] md:w-[120px] md:h-[56px] rounded-lg border transition-all ${
                   canScrollLeft 
-                    ? 'hover:bg-white/5 hover:border-white/30 text-white' 
-                    : 'opacity-30 cursor-not-allowed text-gray-600'
+                    ? 'bg-black border-white/20 text-white hover:border-white/30' 
+                    : 'bg-black border-white/10 text-gray-600 opacity-30 cursor-not-allowed'
                 }`}
                 aria-label="Previous"
               >
@@ -193,22 +202,13 @@ export default function Experience() {
                 disabled={!canScrollRight}
                 className={`w-[106px] h-[48px] md:w-[120px] md:h-[56px] rounded-lg border transition-all ${
                   canScrollRight 
-                    ? 'bg-white text-black hover:bg-gray-100 border-white' 
-                    : 'bg-white/10 text-gray-600 cursor-not-allowed border-white/20'
+                    ? 'bg-black border-white/20 text-white hover:border-white/30' 
+                    : 'bg-black border-white/10 text-gray-600 opacity-30 cursor-not-allowed'
                 }`}
                 aria-label="Next"
               >
                 <span className="text-base md:text-lg font-medium">Next</span>
               </button>
-            </div>
-
-            {/* Progress Bar */}
-            <div className="flex-1 h-1 bg-white/10 rounded-full overflow-hidden">
-              <motion.div
-                className="h-full bg-white rounded-full"
-                style={{ width: `${scrollProgress}%` }}
-                transition={{ duration: 0.1 }}
-              />
             </div>
           </div>
         </div>

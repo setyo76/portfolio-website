@@ -51,7 +51,7 @@ export default function Navbar() {
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className='flex items-center h-12 px-6 md:px-10 bg-black/60 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl relative w-full max-w-[280px] md:max-w-none md:w-auto'
+          className='flex items-center h-12 px-6 md:px-10 bg-black/60 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl relative w-full md:w-auto'
         >
           {/* Desktop Navigation */}
           <div className='hidden md:flex items-center gap-8 lg:gap-14'>
@@ -111,7 +111,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className='fixed inset-0 z-[65] bg-black/40 backdrop-blur-md md:hidden'
+              className='fixed inset-0 z-[65] bg-black/40 backdrop-blur-md md:hidden '
               onClick={() => setIsOpen(false)}
             />
 

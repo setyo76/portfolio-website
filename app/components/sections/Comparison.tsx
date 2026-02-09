@@ -136,15 +136,15 @@ export default function Comparison() {
           className="bg-black border border-white/10 rounded-lg overflow-hidden py-6 md:py-8"
         >
           {/* Table Header */}
-          <div className="grid grid-cols-3 border-b border-white/10">
-            <div className="px-6 py-5 md:px-8 md:py-6">
-              <h3 className="text-lg md:text-xl font-bold text-white">Skill</h3>
+          <div className="grid grid-cols-[2.5fr_0.8fr_0.8fr] md:grid-cols-3 border-b border-white/10">
+            <div className="px-4 py-5 md:px-8 md:py-6">
+              <h3 className="text-base md:text-xl font-bold text-white">Skill</h3>
             </div>
-            <div className="px-6 py-5 md:px-8 md:py-6 bg-[#14b8a6]/20 border-x border-white/10">
-              <h3 className="text-lg md:text-xl font-bold text-white">With Me</h3>
+            <div className="px-3 py-5 md:px-8 md:py-6 bg-[#14b8a6]/20 border-x border-white/10 text-center">
+              <h3 className="text-base md:text-xl font-bold text-white">With<br className="md:hidden" /> Me</h3>
             </div>
-            <div className="px-6 py-5 md:px-8 md:py-6">
-              <h3 className="text-lg md:text-xl font-bold text-white">Other</h3>
+            <div className="px-3 py-5 md:px-8 md:py-6 text-center">
+              <h3 className="text-base md:text-xl font-bold text-white">Other</h3>
             </div>
           </div>
 
@@ -153,17 +153,17 @@ export default function Comparison() {
             <motion.div
               key={skill.name}
               variants={rowVariants}
-              className="grid grid-cols-3 border-b border-white/10 last:border-b-0 hover:bg-white/5 transition-colors duration-300"
+              className="grid grid-cols-[2.5fr_0.8fr_0.8fr] md:grid-cols-3 border-b border-white/10 last:border-b-0 hover:bg-white/5 transition-colors duration-300"
             >
               {/* Skill Name */}
-              <div className="px-6 py-5 md:px-8 md:py-6 flex items-center">
-                <span className="text-white text-sm md:text-base">{skill.name}</span>
+              <div className="px-4 py-4 md:px-8 md:py-6 flex items-center">
+                <span className="text-white text-xs md:text-base leading-tight">{skill.name}</span>
               </div>
 
               {/* With Me Column */}
-              <div className="px-6 pr-6 py-5 md:px-8 md:py-6 bg-[#14b8a6]/20 border-x border-white/10 flex items-center">
+              <div className="px-3 py-4 md:px-8 md:py-6 bg-[#14b8a6]/20 border-x border-white/10 flex items-center justify-center">
                 {skill.withMe && (
-                  <div className="w-8 h-8 md:w-10 md:h-10 relative">
+                  <div className="w-6 h-6 md:w-10 md:h-10 relative flex-shrink-0">
                     <Image
                       src="/images/checklist.png"
                       alt="Check"
@@ -176,9 +176,9 @@ export default function Comparison() {
               </div>
 
               {/* Other Column */}
-              <div className="px-6 pr-6 py-5 md:px-8 md:py-6 flex items-center">
+              <div className="px-3 py-4 md:px-8 md:py-6 flex items-center justify-center">
                 {!skill.other && (
-                  <div className="w-8 h-8 md:w-10 md:h-10 relative">
+                  <div className="w-6 h-6 md:w-10 md:h-10 relative flex-shrink-0">
                     <Image
                       src="/images/cross.png"
                       alt="Cross"

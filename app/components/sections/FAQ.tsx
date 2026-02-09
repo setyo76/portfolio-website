@@ -123,8 +123,8 @@ export default function FAQ() {
               disabled={!canScrollRight}
               className={`w-[106px] h-[48px] md:w-[120px] md:h-[56px] rounded-lg border transition-all ${
                 canScrollRight 
-                  ? 'bg-white text-black hover:bg-gray-100 border-white' 
-                  : 'bg-white/10 text-gray-600 cursor-not-allowed border-white/20'
+                  ? 'bg-black border-white/20 text-white hover:border-white/30' 
+                  : 'bg-black border-white/10 text-gray-600 opacity-30 cursor-not-allowed'
               }`}
               aria-label="Next"
             >

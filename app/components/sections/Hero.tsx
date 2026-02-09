@@ -16,11 +16,11 @@ export default function Hero() {
   return (
     <>
       {/* Hero Section */}
-      <section id="edwin" className="w-full relative min-h-screen flex items-start overflow-hidden bg-transparent">
+      <section className="w-full relative min-h-screen flex items-start overflow-hidden bg-transparent">
         <div className="container mx-auto px-6 md:px-[140px] relative h-full">
           
           {/* Mobile Layout: ID Card First, Then Text */}
-          <div className="md:hidden flex flex-col items-start pt-[0px]">
+          <div className="md:hidden flex flex-col items-start pt-[80px]">
             {/* ID Card - Mobile - Centered and Higher */}
             <motion.div 
               className="relative w-[200px] h-[394px] mb-8 mx-auto"
@@ -62,7 +62,7 @@ export default function Hero() {
 
             {/* Text Content - Mobile - Left Aligned */}
             <motion.div 
-              className="mb-8 flex flex-col items-start text-left w-full"
+              className="flex flex-col items-start text-left w-full"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -95,7 +95,7 @@ export default function Hero() {
                 Passionate about frontend development, I focus on crafting digital products that are visually polished, performance-optimized, and deliver a consistent experience across all platforms.
               </p>
               
-              <Button className="bg-[#14b8a6] hover:bg-[#0d9488] text-white px-6 py-3 rounded-sm flex items-center gap-3 transition-all text-sm">
+              <Button className="w-full bg-[#14b8a6] hover:bg-[#0d9488] text-white px-6 py-3 rounded-sm flex items-center justify-center gap-3 transition-all text-sm mb-8">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                 Hire Me
               </Button>
