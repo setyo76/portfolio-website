@@ -57,13 +57,11 @@ export default function Contact() {
 
   const handleBackToHome = () => {
     setShowPopup(false);
-    // Optional: scroll to top or navigate
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleTryAgain = () => {
     setShowPopup(false);
-    // Form data is preserved for retry
   };
 
   return (
@@ -177,9 +175,10 @@ export default function Contact() {
 
               {/* Submit Button */}
               <Button
+                type='submit'
                 icon
                 variant='primary'
-                className='w-full bg-white'
+                className='w-full !bg-white hover:!bg-gray-100 !text-black justify-center'
                 disabled={isSubmitting}
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -268,7 +267,7 @@ export default function Contact() {
               </div>
 
               {/* Large GET IN TOUCH Text */}
-<div className='mt-16 md:mt-20'>
+              <div className='mt-16 md:mt-20'>
                 <h3 className='text-[64px] md:text-[56px] font-bold text-white leading-none tracking-tight md:mt-130'>
                   GET IN TOUCH
                 </h3>
@@ -297,10 +296,10 @@ export default function Contact() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               transition={{ type: 'spring', duration: 0.5 }}
-              className='fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[454px] max-w-[90vw]'
+              className='fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[518px] max-w-[90vw]'
             >
               <div
-                className='border border-neutral-900 rounded-lg p-8 md:p-12 text-center overflow-hidden'
+                className='border border-neutral-900 rounded-[8px] p-12 text-center overflow-hidden relative'
                 style={{
                   background:
                     popupType === 'success'
@@ -308,6 +307,28 @@ export default function Contact() {
                       : 'radial-gradient(50% 50% at 50% 50%, #7F1D1D 0%, #000000 100%)',
                 }}
               >
+                {/* Close Button - Top Right */}
+                <button
+                  onClick={closePopup}
+                  className='absolute top-4 right-4 w-8 h-8 flex items-center justify-center hover:opacity-70 transition-opacity'
+                >
+                  <svg
+                    width='24'
+                    height='24'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    xmlns='http://www.w3.org/2000/svg'
+                  >
+                    <path
+                      d='M18 6L6 18M6 6L18 18'
+                      stroke='white'
+                      strokeWidth='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                    />
+                  </svg>
+                </button>
+
                 {/* Icon with Ripple Effect */}
                 <div className='relative w-32 h-32 mx-auto mb-8'>
                   {/* Ripple Circles */}
@@ -332,7 +353,7 @@ export default function Contact() {
                         }}
                       />
 
-                      {/* Center Icon - MENGGUNAKAN SVG */}
+                      {/* Center Icon - Success Check */}
                       <div className='absolute inset-0 flex items-center justify-center'>
                         <div className='w-20 h-20 rounded-full bg-teal-600 flex items-center justify-center'>
                           <svg
@@ -374,7 +395,7 @@ export default function Contact() {
                         }}
                       />
 
-                      {/* Center Icon - MENGGUNAKAN SVG */}
+                      {/* Center Icon - Failed X */}
                       <div className='absolute inset-0 flex items-center justify-center'>
                         <div className='w-20 h-20 rounded-full bg-[#FF1654] flex items-center justify-center'>
                           <svg
@@ -399,14 +420,14 @@ export default function Contact() {
                 </div>
 
                 {/* Title */}
-                <h3 className='text-2xl md:text-3xl font-bold text-white mb-4'>
+                <h3 className='text-[32px] font-bold text-white mb-4 leading-tight'>
                   {popupType === 'success'
                     ? 'Thanks for Reaching Out!'
                     : 'Message Not Sent'}
                 </h3>
 
                 {/* Description */}
-                <p className='text-gray-400 text-base md:text-lg mb-8'>
+                <p className='text-gray-400 text-[18px] mb-8 leading-relaxed'>
                   {popupType === 'success'
                     ? "I've received your message and will get back to you shortly."
                     : "Something broke along the way. Let's try resending it."}
@@ -416,14 +437,14 @@ export default function Contact() {
                 {popupType === 'success' ? (
                   <button
                     onClick={handleBackToHome}
-                    className='w-full bg-[#14b8a6] hover:bg-[#0f9b8a] text-white font-medium text-lg py-4 px-8 rounded-[9999px] transition-colors'
+                    className='w-full bg-[#14b8a6] hover:bg-[#0f9b8a] text-white font-medium text-[18px] py-4 px-8 rounded-full transition-colors'
                   >
                     Back to Home
                   </button>
                 ) : (
                   <button
                     onClick={handleTryAgain}
-                    className='w-full bg-[#14b8a6] hover:bg-[#0f9b8a] text-white font-medium text-lg py-4 px-8 rounded-[9999px] transition-colors'
+                    className='w-full bg-[#14b8a6] hover:bg-[#0f9b8a] text-white font-medium text-[18px] py-4 px-8 rounded-full transition-colors'
                   >
                     Try Again
                   </button>

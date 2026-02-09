@@ -1,40 +1,46 @@
-'use client';
-
+// app/components/ui/Button.tsx
+import React from 'react';
 import { Mail } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
-  variant?: 'primary' | 'outline';
+  variant?: 'primary' | 'secondary';
   icon?: boolean;
   className?: string;
+  disabled?: boolean;
+  type?: 'button' | 'submit' | 'reset';
 }
 
-export default function Button({ 
-  children, 
-  onClick, 
+export default function Button({
+  children,
+  onClick,
   variant = 'primary',
   icon = false,
-  className = '' 
+  className = '',
+  disabled = false,
+  type = 'button',
 }: ButtonProps) {
-  
-  const baseStyles = "px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2";
+  const baseStyles = 'px-8 py-4 rounded-sm font-medium transition-all duration-300 flex items-center gap-3';
   
   const variantStyles = {
-    primary: "bg-[#00d9ff] text-[#0a192f] hover:bg-[#64ffda] hover:shadow-lg hover:shadow-[#00d9ff]/50",
-    outline: "border-2 border-[#64ffda] text-[#64ffda] hover:bg-[#64ffda] hover:text-[#0a192f]"
+    primary: 'bg-[#14b8a6] hover:bg-[#0d9488] text-white',
+    secondary: 'bg-transparent border border-white/20 hover:border-[#14b8a6] text-white',
   };
 
+  const disabledStyles = disabled 
+    ? 'opacity-50 cursor-not-allowed hover:bg-[#14b8a6]' 
+    : 'cursor-pointer';
+
   return (
-    <motion.button
+    <button
+      type={type}
       onClick={onClick}
-      className={`${baseStyles} ${variantStyles[variant]} ${className}`}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      disabled={disabled}
+      className={`${baseStyles} ${variantStyles[variant]} ${disabledStyles} ${className}`}
     >
-      {icon && <Mail size={20} />}
+      {icon && <Mail className="w-5 h-5" />}
       {children}
-    </motion.button>
+    </button>
   );
 }

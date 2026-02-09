@@ -62,17 +62,17 @@ export default function Skills() {
     visible: { opacity: 1, x: 0 },
   };
 
-  const barVariants = {
-    hidden: { width: 0 },
-    visible: (percentage: number) => ({
-      width: `${percentage}%`,
-      transition: {
-        duration: 1.2,
-        ease: 'easeOut',
-        delay: 0.2,
-      },
-    }),
-  };
+const barVariants = {
+  hidden: { width: 0 },
+  visible: (percentage: number) => ({
+    width: `${percentage}%`,
+    transition: {
+      duration: 1,
+      ease: "easeOut", // Ganti ke valid string
+      delay: 0.2,
+    },
+  }),
+};
 
   return (
     <section className='w-full bg-black py-16 md:py-24 lg:py-32'>
