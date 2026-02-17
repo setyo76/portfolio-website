@@ -72,7 +72,7 @@ export default function Hero() {
               transition={{ duration: 0.8 }}
             >
               <span className='text-gray-400 text-[14px] mb-4 font-medium'>
-                Hi, I&apos;m Edwin Anderson
+                Hi, I&apos;m Setyo N
               </span>
 
               <div className='flex flex-col mb-6'>
@@ -134,7 +134,7 @@ export default function Hero() {
               transition={{ duration: 0.8 }}
             >
               <span className='text-gray-400 text-[18px] mb-6 font-medium'>
-                Hi, I&apos;m Edwin Anderson
+                Hi, I&apos;m Setyo N
               </span>
 
               <div className='flex flex-col mb-8'>

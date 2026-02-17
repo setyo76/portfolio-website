@@ -220,7 +220,7 @@ export default function Contact() {
                   Contact
                 </h3>
                 <p className='text-gray-300 text-base md:text-lg'>
-                  (+62) 1234567890
+                  (+62) 81213265482
                 </p>
               </div>
 
@@ -249,7 +249,7 @@ export default function Contact() {
                   </motion.a>
 
                   <motion.a
-                    href='#linkedin'
+                    href='https://www.linkedin.com/in/setnug76/' target='_blank'
                     className='w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/20 flex items-center justify-center hover:border-[#14b8a6] hover:bg-[#14b8a6]/10 transition-all'
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}

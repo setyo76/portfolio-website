@@ -7,7 +7,7 @@ import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 
 const navLinks = [
-  { name: 'Edwin', href: '#hero' },
+  { name: 'Setyo', href: '#hero' },
   { name: 'About', href: '#about' },
   { name: 'Skill', href: '#skills' },
   { name: 'Projects', href: '#projects' },
@@ -16,7 +16,7 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const [activeLink, setActiveLink] = useState('Edwin');
+  const [activeLink, setActiveLink] = useState('Setyo');
   const [isOpen, setIsOpen] = useState(false);
 
   const handleNavClick = (
@@ -85,7 +85,7 @@ export default function Navbar() {
           <div className='flex md:hidden items-center justify-between w-full'>
             <a
               href='#hero'
-              onClick={(e) => handleNavClick(e, 'Edwin', '#hero')}
+              onClick={(e) => handleNavClick(e, 'Setyo', '#hero')}
               className='text-[11px] uppercase tracking-[0.15em] text-white font-bold cursor-pointer hover:text-teal-400 transition-colors'
             >
               {activeLink}
@@ -144,7 +144,7 @@ export default function Navbar() {
                   <div className='flex items-center justify-between px-6 py-5 border-b border-white/10'>
                     <a
                       href='#hero'
-                      onClick={(e) => handleNavClick(e, 'Edwin', '#hero')}
+                      onClick={(e) => handleNavClick(e, 'Setyo', '#hero')}
                       className='text-white text-sm font-bold uppercase tracking-[0.2em] cursor-pointer hover:text-teal-400 transition-colors'
                     >
                       EDWIN
