@@ -4,7 +4,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Button from '../ui/Button';
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
 import { useState } from 'react';
-import Image from 'next/image';
+import emailjs from '@emailjs/browser';
+
+// ⚠️ GANTI DENGAN DATA ANDA DARI EMAILJS DASHBOARD
+const EMAILJS_SERVICE_ID = 'service_fr31lqw';   // Dari Step 1
+const EMAILJS_TEMPLATE_ID = 'template_3cbmqwo'; // Dari Step 2
+const EMAILJS_PUBLIC_KEY = '7hhLZOiFBnQoDVGmC';    // Dari Step 3
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -20,14 +25,17 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
     try {
-      await new Promise((resolve, reject) => {
-        setTimeout(() => {
-          // Randomly succeed or fail for demo
-          Math.random() > 0.5 ? resolve(true) : reject(false);
-        }, 1500);
-      });
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,        // {{name}} di template EmailJS
+          email: formData.email,      // {{email}} di template EmailJS
+          message: formData.message,  // {{message}} di template EmailJS
+        },
+        EMAILJS_PUBLIC_KEY
+      );
 
       // Success
       setPopupType('success');
@@ -331,7 +339,6 @@ export default function Contact() {
 
                 {/* Icon with Ripple Effect */}
                 <div className='relative w-32 h-32 mx-auto mb-8'>
-                  {/* Ripple Circles */}
                   {popupType === 'success' ? (
                     <>
                       <div
@@ -340,36 +347,16 @@ export default function Contact() {
                       />
                       <div
                         className='absolute inset-2 rounded-full border border-teal-500/30 animate-ping'
-                        style={{
-                          animationDuration: '2.5s',
-                          animationDelay: '0.3s',
-                        }}
+                        style={{ animationDuration: '2.5s', animationDelay: '0.3s' }}
                       />
                       <div
                         className='absolute inset-4 rounded-full border border-teal-500/40 animate-ping'
-                        style={{
-                          animationDuration: '3s',
-                          animationDelay: '0.6s',
-                        }}
+                        style={{ animationDuration: '3s', animationDelay: '0.6s' }}
                       />
-
-                      {/* Center Icon - Success Check */}
                       <div className='absolute inset-0 flex items-center justify-center'>
                         <div className='w-20 h-20 rounded-full bg-teal-600 flex items-center justify-center'>
-                          <svg
-                            width='40'
-                            height='40'
-                            viewBox='0 0 40 40'
-                            fill='none'
-                            xmlns='http://www.w3.org/2000/svg'
-                          >
-                            <path
-                              d='M8 20L16 28L32 12'
-                              stroke='white'
-                              strokeWidth='4'
-                              strokeLinecap='round'
-                              strokeLinejoin='round'
-                            />
+                          <svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                            <path d='M8 20L16 28L32 12' stroke='white' strokeWidth='4' strokeLinecap='round' strokeLinejoin='round' />
                           </svg>
                         </div>
                       </div>
@@ -382,36 +369,16 @@ export default function Contact() {
                       />
                       <div
                         className='absolute inset-2 rounded-full border border-red-500/30 animate-ping'
-                        style={{
-                          animationDuration: '2.5s',
-                          animationDelay: '0.3s',
-                        }}
+                        style={{ animationDuration: '2.5s', animationDelay: '0.3s' }}
                       />
                       <div
                         className='absolute inset-4 rounded-full border border-red-500/40 animate-ping'
-                        style={{
-                          animationDuration: '3s',
-                          animationDelay: '0.6s',
-                        }}
+                        style={{ animationDuration: '3s', animationDelay: '0.6s' }}
                       />
-
-                      {/* Center Icon - Failed X */}
                       <div className='absolute inset-0 flex items-center justify-center'>
                         <div className='w-20 h-20 rounded-full bg-[#FF1654] flex items-center justify-center'>
-                          <svg
-                            width='40'
-                            height='40'
-                            viewBox='0 0 40 40'
-                            fill='none'
-                            xmlns='http://www.w3.org/2000/svg'
-                          >
-                            <path
-                              d='M12 12L28 28M28 12L12 28'
-                              stroke='white'
-                              strokeWidth='4'
-                              strokeLinecap='round'
-                              strokeLinejoin='round'
-                            />
+                          <svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                            <path d='M12 12L28 28M28 12L12 28' stroke='white' strokeWidth='4' strokeLinecap='round' strokeLinejoin='round' />
                           </svg>
                         </div>
                       </div>
@@ -421,9 +388,7 @@ export default function Contact() {
 
                 {/* Title */}
                 <h3 className='text-[32px] font-bold text-white mb-4 leading-tight'>
-                  {popupType === 'success'
-                    ? 'Thanks for Reaching Out!'
-                    : 'Message Not Sent'}
+                  {popupType === 'success' ? 'Thanks for Reaching Out!' : 'Message Not Sent'}
                 </h3>
 
                 {/* Description */}
