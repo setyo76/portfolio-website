@@ -33,7 +33,7 @@ const testimonials: Testimonial[] = [
     title: 'Improved user engagement and sign-ups',
     metric: '3X',
     rating: 5,
-    text: "Edwin's expertise in frontend development is remarkable. He brings creativity and innovation to the table, ensuring that every project is not only functional but also visually appealing.",
+    text: "Setyo's expertise in frontend development is remarkable. He brings creativity and innovation to the table, ensuring that every project is not only functional but also visually appealing.",
     author: 'Pablo Stanley',
     role: 'Product Manager at Finovate',
     avatar: '/images/people 2.png',
@@ -41,7 +41,7 @@ const testimonials: Testimonial[] = [
   {
     id: 3,
     rating: 5,
-    text: "Edwin's work ethic and dedication are truly inspiring. He approaches challenges with a positive attitude and consistently finds effective solutions.",
+    text: "Setyo's work ethic and dedication are truly inspiring. He approaches challenges with a positive attitude and consistently finds effective solutions.",
     author: 'Pablo Stanley',
     role: 'Product Manager at Finovate',
     avatar: '/images/people 3.png',
@@ -49,7 +49,7 @@ const testimonials: Testimonial[] = [
   {
     id: 4,
     rating: 5,
-    text: "Edwin has a unique ability to transform complex ideas into user-friendly designs. His contributions have significantly enhanced our projects.",
+    text: "Setyo has a unique ability to transform complex ideas into user-friendly designs. His contributions have significantly enhanced our projects.",
     author: 'Pablo Stanley',
     role: 'Product Manager at Finovate',
     avatar: '/images/people 4.png',
