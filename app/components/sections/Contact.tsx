@@ -90,7 +90,7 @@ export default function Contact() {
       />
 
       <div className='container mx-auto px-6 md:px-[140px] relative z-10'>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-10'>
+        <div id="form" className='grid grid-cols-1 lg:grid-cols-2 gap-10'>
           {/* Left Card - Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}

@@ -105,7 +105,7 @@ const barVariants = {
               transition={{ duration: 0.6, delay: 0.3 }}
               className='pt-8 lg:pt-0 w-full'
             >
-              <Button icon variant='primary' className='w-full'>
+              <Button icon variant='primary' className='w-full justify-center'>
                 Send Message
               </Button>
             </motion.div>
